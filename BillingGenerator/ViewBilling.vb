@@ -87,7 +87,7 @@ Public Class ViewBilling
     End Sub
 
     Private Sub saveBilling(ByVal path As String)
-        Dim filePath As String = path + "/" + txtStudentName.Text + ".png"
+        Dim filePath As String = path + "/" + txtStudentName.Text.Trim() + ".png"
         Dim billingImage As New Bitmap(picBilling.Image, picBilling.Size)
         Dim graphic As Graphics = Graphics.FromImage(billingImage)
         For Each control As Control In picBilling.Controls

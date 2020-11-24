@@ -47,12 +47,14 @@
 
     Private Function generateBilling() As Billing
         Dim billing As New Billing
+        Dim excludedDates As List(Of Integer) = GetExcludedDates()
         billing.MonthYear = dtpMonthYear.Value
         billing.StudentsName = txtStudentName.Text.Trim()
         billing.PreparedBy = txtPreparedBy.Text.Trim()
         For Each schedule As Date In DateRange(dtpDateFrom.Value, dtpDateTo.Value)
             Dim dayOfWeek As String = schedule.ToString("dddd")
-            If chkSchedule.CheckedItems.Contains(dayOfWeek) Then
+            Dim dateOfMonth As Integer = schedule.Day
+            If Not excludedDates.Contains(dateOfMonth) AndAlso chkSchedule.CheckedItems.Contains(dayOfWeek) Then
                 billing.ScheduleDates.Add(schedule.Day)
             End If
         Next
@@ -61,6 +63,14 @@
             billing.PaymentDate = dtpPaymentDate.Value
         End If
         Return billing
+    End Function
+
+    Private Function GetExcludedDates() As List(Of Integer)
+        Dim excludedDays As New List(Of Integer)
+        For Each day As String In txtExcluded.Lines
+            excludedDays.Add(Integer.Parse(day))
+        Next
+        Return excludedDays
     End Function
 
     Private Function DateRange(dateStart As Date, dateEnd As Date) As IEnumerable(Of Date)

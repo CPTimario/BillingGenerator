@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.chkSchedule = New System.Windows.Forms.CheckedListBox()
@@ -39,6 +39,8 @@ Partial Class Main
         Me.dtpDateFrom = New System.Windows.Forms.DateTimePicker()
         Me.dtpDateTo = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblExcluded = New System.Windows.Forms.Label()
+        Me.txtExcluded = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -86,7 +88,7 @@ Partial Class Main
         Me.txtPreparedBy.Location = New System.Drawing.Point(155, 303)
         Me.txtPreparedBy.Name = "txtPreparedBy"
         Me.txtPreparedBy.Size = New System.Drawing.Size(270, 26)
-        Me.txtPreparedBy.TabIndex = 5
+        Me.txtPreparedBy.TabIndex = 6
         '
         'Label1
         '
@@ -129,7 +131,7 @@ Partial Class Main
         Me.txtModeOfPayment.Location = New System.Drawing.Point(155, 335)
         Me.txtModeOfPayment.Name = "txtModeOfPayment"
         Me.txtModeOfPayment.Size = New System.Drawing.Size(270, 26)
-        Me.txtModeOfPayment.TabIndex = 6
+        Me.txtModeOfPayment.TabIndex = 7
         '
         'dtpPaymentDate
         '
@@ -139,7 +141,7 @@ Partial Class Main
         Me.dtpPaymentDate.Location = New System.Drawing.Point(155, 367)
         Me.dtpPaymentDate.Name = "dtpPaymentDate"
         Me.dtpPaymentDate.Size = New System.Drawing.Size(185, 26)
-        Me.dtpPaymentDate.TabIndex = 7
+        Me.dtpPaymentDate.TabIndex = 8
         '
         'Label5
         '
@@ -166,7 +168,7 @@ Partial Class Main
         Me.btnGenerate.Location = New System.Drawing.Point(181, 411)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(87, 30)
-        Me.btnGenerate.TabIndex = 8
+        Me.btnGenerate.TabIndex = 9
         Me.btnGenerate.Text = "Generate"
         Me.btnGenerate.UseVisualStyleBackColor = True
         '
@@ -198,11 +200,30 @@ Partial Class Main
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "~"
         '
+        'lblExcluded
+        '
+        Me.lblExcluded.AutoSize = True
+        Me.lblExcluded.Location = New System.Drawing.Point(301, 168)
+        Me.lblExcluded.Name = "lblExcluded"
+        Me.lblExcluded.Size = New System.Drawing.Size(78, 20)
+        Me.lblExcluded.TabIndex = 0
+        Me.lblExcluded.Text = "Excluded:"
+        '
+        'txtExcluded
+        '
+        Me.txtExcluded.Location = New System.Drawing.Point(305, 191)
+        Me.txtExcluded.Name = "txtExcluded"
+        Me.txtExcluded.Size = New System.Drawing.Size(120, 106)
+        Me.txtExcluded.TabIndex = 5
+        Me.txtExcluded.Text = ""
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(450, 454)
+        Me.Controls.Add(Me.txtExcluded)
+        Me.Controls.Add(Me.lblExcluded)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.dtpDateTo)
         Me.Controls.Add(Me.dtpDateFrom)
@@ -249,4 +270,6 @@ Partial Class Main
     Friend WithEvents dtpDateFrom As DateTimePicker
     Friend WithEvents dtpDateTo As DateTimePicker
     Friend WithEvents Label7 As Label
+    Friend WithEvents lblExcluded As Label
+    Friend WithEvents txtExcluded As RichTextBox
 End Class
