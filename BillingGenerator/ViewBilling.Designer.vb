@@ -273,6 +273,7 @@ Partial Class ViewBilling
         Me.Controls.Add(Me.lblMonth)
         Me.Controls.Add(Me.picBilling)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewBilling"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Billing"

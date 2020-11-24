@@ -22,6 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.chkSchedule = New System.Windows.Forms.CheckedListBox()
         Me.dtpMonthYear = New System.Windows.Forms.DateTimePicker()
@@ -244,6 +245,7 @@ Partial Class Main
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
